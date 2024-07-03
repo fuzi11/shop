@@ -1,119 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chatbot</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Struktur Organisasi Kelas</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    .class {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+    }
+
+    .class .teacher, .class .student {
+        flex: 1;
+        text-align: center;
+    }
+
+    .class .teacher {
+        border-right: 1px solid #ccc;
+        padding-right: 20px;
+    }
+
+    .class h2 {
+        color: #555;
+    }
+
+    .class ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .class ul li {
+        margin-bottom: 10px;
+    }
+
+    .class .teacher img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    .class .student .student-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .class .student .student-list .student-item {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border-radius: 4px;
+        text-align: center;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .class .student .student-list .student-item img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 5px;
+    }
+
+    .class .student .student-list .student-item p {
+        margin-bottom: 5px;
+    }
+
+    /* Additional styles for more content */
+    .class .teacher .education {
+        margin-top: 20px;
+        border-top: 1px solid #ccc;
+        padding-top: 20px;
+    }
+
+    .class .teacher .achievements {
+        margin-top: 20px;
+        border-top: 1px solid #ccc;
+        padding-top: 20px;
+    }
+
+    .class .student .student-list .student-item .interests {
+        font-style: italic;
+        color: #666;
+    }
+
+    .class .student .student-list .student-item .achievements {
+        font-weight: bold;
+        color: #555;
+    }
+
+    /* Media query for responsiveness */
+    @media (max-width: 768px) {
+        .class {
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
         }
-        #chat-container {
-            width: 60%;
-            max-width: 800px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+
+        .class .teacher, .class .student {
+            border: none;
+            padding: 0;
+            text-align: center;
+            margin-bottom: 30px;
         }
-        #chat-box {
-            max-height: 400px;
-            overflow-y: auto;
-            border: 1px solid #ddd;
-            padding: 10px;
+
+        .class .teacher img, .class .student .student-list .student-item img {
+            width: 80px;
+            height: 80px;
             margin-bottom: 10px;
         }
-        .chat-message {
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 8px;
+
+        .class .student .student-list {
+            grid-template-columns: repeat(2, 1fr);
         }
-        .user-message {
-            background-color: #e1f7d5;
-            text-align: right;
-        }
-        .bot-message {
-            background-color: #f1f1f1;
-        }
-        #input-box {
-            display: flex;
-        }
-        #input-box input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px 0 0 4px;
-        }
-        #input-box button {
-            padding: 10px;
-            border: none;
-            background: #007bff;
-            color: white;
-            cursor: pointer;
-            border-radius: 0 4px 4px 0;
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
 
-<div id="chat-container">
-    <div id="chat-box"></div>
-    <div id="input-box">
-        <input type="text" id="user-input" placeholder="Type a message...">
-        <button onclick="sendMessage()">Send</button>
+<div class="container">
+    <h1>Struktur Organisasi Kelas</h1>
+
+    <div class="class">
+        <div class="teacher">
+            <h2>Teacher</h2>
+            <img src="teacher.jpg" alt="Teacher">
+            <p>Mr. John Doe</p>
+            <ul>
+                <li>Subject: Mathematics</li>
+                <li>Experience: 10 years</li>
+                <li>Office Hours: 9 AM - 12 PM</li>
+            </ul>
+            <div class="education">
+                <h3>Educational Background</h3>
+                <ul>
+                    <li>Bachelor in Education</li>
+                    <li>Master's Degree in Mathematics</li>
+                </ul>
+            </div>
+            <div class="achievements">
+                <h3>Professional Achievements</h3>
+                <ul>
+                    <li>Published articles in math journals</li>
+                    <li>Mentored math competition winners</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="student">
+            <h2>Students</h2>
+            <div class="student-list">
+                <div class="student-item">
+                    <img src="student1.jpg" alt="Student 1">
+                    <p>Anna Smith</p>
+                    <p>Grade: 10</p>
+                    <p class="interests">Interests: Science Club, Debate Team</p>
+                    <p class="achievements">Achievements: Honor Roll, Science Fair Winner</p>
+                </div>
+                <div class="student-item">
+                    <img src="student2.jpg" alt="Student 2">
+                    <p>James Brown</p>
+                    <p>Grade: 11</p>
+                    <p class="interests">Interests: Football, Photography</p>
+                    <p class="achievements">Achievements: Sports Team Captain, Photography Club Founder</p>
+                </div>
+                <!-- More students can be added -->
+                <!-- Example of more students -->
+                <div class="student-item">
+                    <img src="student3.jpg" alt="Student 3">
+                    <p>Sara Johnson</p>
+                    <p>Grade: 9</p>
+                    <p class="interests">Interests: Music, Drama Club</p>
+                    <p class="achievements">Achievements: Soloist in School Concert, Drama Club Lead Actress</p>
+                </div>
+                <!-- More students can be added -->
+                <!-- Example of more students -->
+                <div class="student-item">
+                    <img src="student4.jpg" alt="Student 4">
+                    <p>David Lee</p>
+                    <p>Grade: 12</p>
+                    <p class="interests">Interests: Chess Club, Computer Science</p>
+                    <p class="achievements">Achievements: Chess Tournament Winner, Coding Competition Finalist</p>
+                </div>
+                <!-- More students can be added -->
+            </div>
+        </div>
     </div>
 </div>
 
-<script>
-    const apiKey = 'sk-proj-8VERerMhjG0DyHlQ8oOFT3BlbkFJnJUcP5NLxyJD49kXL7r7';
-
-    function sendMessage() {
-        const inputBox = document.getElementById('user-input');
-        const message = inputBox.value.trim();
-        if (message === '') return;
-
-        displayMessage(message, 'user-message');
-
-        fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${apiKey}`
-            },
-            body: JSON.stringify({
-                prompt: message,
-                max_tokens: 150
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            const botMessage = data.choices[0].text.trim();
-            displayMessage(botMessage, 'bot-message');
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-
-        inputBox.value = '';
-    }
-
-    function displayMessage(message, className) {
-        const chatBox = document.getElementById('chat-box');
-        const messageElement = document.createElement('div');
-        messageElement.className = `chat-message ${className}`;
-        messageElement.textContent = message;
-        chatBox.appendChild(messageElement);
-        chatBox.scrollTop = chatBox.scrollHeight;
-    }
-</script>
-
 </body>
-  </html>
-
+    </html>
+        
